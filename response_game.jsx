@@ -20,7 +20,7 @@ endTime;
          this.timeout = setTimeout(()=> {
              this.setState({
                  state:'now',
-                 Message: 'Right now!'
+                 message: 'Right now!'
              })
              this.startTime = new Date();
            
@@ -29,7 +29,7 @@ endTime;
          } else if (state === 'ready') {
             clearTimeout(this.timeout)
             this.setState({
-                state:'waiting',
+                state:'fail',
                message: 'Boo! Too fast! Wait for Green'
             })
             
@@ -37,7 +37,7 @@ endTime;
          else if (state === 'now') {
          this.endTime = new Date()
          this.setState((prevState) => {
-          return{   state:'waiting',
+          return{ state:'waiting',
              message: ' Click to Start',
              result: [...prevState.result, this.endTime-this.startTime]
         
@@ -57,7 +57,7 @@ endTime;
         const {result} = this.state; 
         return result.length === 0 ? null : <> <div>Average Response Time: {this.state.result.reduce((a, c) => a + c)/
         result.length*0.01} sec </div>
-        <button onClick={this.onReset}>리셋</button></>}
+        <button onClick={this.onReset}>Reset</button></>}
        
 
     render () 
@@ -69,8 +69,9 @@ endTime;
     onClick={this.onClickScreen}>
         {message}
     </div>
+    <div id='note'>
     {this.renderAverage()}
-   
+    </div>
      </>
 
         )

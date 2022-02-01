@@ -1,19 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 #screen {
+    margin-top:50px;
+    margin-left:20px;
     width: 300px;
     height: 200px;
-    text-align: center;
-    user-select: none;
-}
+    border-radius: 25px;
+    align-items:  center;
+    justify-content: center;
+display:flex;
+font-family: 'Pacifico', cursive;}
 
 #screen.waiting {
     background-color: aqua;
+    border: 2px solid #51ffee;
+    color: white;
+    position: relative;
+    font-size: 25px;
+    -webkit-box-shadow: 0px 0px 30px 20px #a2fff7;
+    box-shadow: 0px 0px 30px 20px #aafff8;
+border-color:#6bfff1;
+    
 }
 
 #screen.ready {
-    background-color:red;
-    color:white}
+    background-color:transparent;
+    border: 2px solid #414141;
+    color:Black;
+    
+    text-align: center;
+ }
 
+ 
+#screen.fail {
+    background-color: #cc0000;
+    border: 2px solid transparent;
+    
+    color:white;
+    text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 30px 20px #b83b3b;
+    box-shadow: 0px 0px 30px 20px #ff0505;
+
+ }
 
 #screen.now {
-    background-color:greenyellow
+    background-color: greenyellow;
+    border: 2px solid transparent;
+    font-size: 40px;
+    color:white;
+    text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 30px 20px rgb(86, 138, 9);
+    box-shadow: 0px 0px 30px 20px rgb(214, 255, 154);
+}
+
+#note {
+    padding-top: 50px;
+    padding-left: 10px;
 }
