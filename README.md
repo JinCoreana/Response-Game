@@ -36,9 +36,7 @@ onClickScreen = () => {
          this.setState((prevState) => {
           return{ state:'waiting',
              message: ' Click to Start',
-             result: [...prevState.result, this.endTime-this.startTime]
-        ```
-
+             result: [...prevState.result, this.endTime-this.startTime]}```
 
 
 ## Image
