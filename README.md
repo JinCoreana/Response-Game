@@ -3,23 +3,14 @@ A response-game coded via React.
 A simple game component using HTML,CSS and React.
 
 
+## Image
+  
+<img src="https://github.com/JinCoreana/Response-Game/blob/main/img/example%201.JPG?raw=true" wdith="500px" height=auto >
+
 ## Main React method codes
 
 ```javascript
-
-import React, {Component} from 'react';
-
-
-class ResponseGame extends Component {
-    state = {
-        state: 'waiting',
-        message: 'Click to start the game',
-        result: [],
-    }
-timeout;
-startTime;
-endTime;
-     onClickScreen = () => {
+   onClickScreen = () => {
      const {state, message, result} = this.state;
      if (state === 'waiting') {
          this.setState({
@@ -54,43 +45,7 @@ endTime;
    })    
    console.log(result)
        
-         }
-     }
-     onReset = () => {
-        this.setState({
-          result: [],
-        });
-      };
-     renderAverage = () => {
-        
-        const {result} = this.state; 
-        return result.length === 0 ? null : <> <div>Average Response Time: {this.state.result.reduce((a, c) => a + c)/
-        result.length*0.01} sec </div>
-        <button onClick={this.onReset}>Reset</button></>}
-       
-
-    render () 
-    {
-    const {state, message} = this.state;  
-   return (
-    <>
-    <div id="screen" className={state} 
-    onClick={this.onClickScreen}>
-        {message}
-    </div>
-    <div id='note'>
-    {this.renderAverage()}
-    </div>
-     </>
-
-        )
-    }
-}
-export default ResponseGame;
-             ```
+         };```
 
 
-# Image
-  
-<img src="https://github.com/JinCoreana/Response-Game/blob/main/img/example%201.JPG?raw=true" wdith="500px" height=auto >
 
