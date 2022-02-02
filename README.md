@@ -3,7 +3,7 @@ A response-game coded via React.
 A simple game component using HTML,CSS and React.
 
 
-## Main React codes
+## Main React method codes
 
 ```javascript
 
@@ -37,7 +37,7 @@ onClickScreen = () => {
           return{ state:'waiting',
              message: ' Click to Start',
              result: [...prevState.result, this.endTime-this.startTime]
-        
+        ```
 
 
 
