@@ -90,7 +90,7 @@ export default ResponseGame;
              ```
 
 
-## Image
+# Image
   
 <img src="https://github.com/JinCoreana/Response-Game/blob/main/img/example%201.JPG?raw=true" wdith="500px" height=auto >
 
