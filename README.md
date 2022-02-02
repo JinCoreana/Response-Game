@@ -7,7 +7,19 @@ A simple game component using HTML,CSS and React.
 
 ```javascript
 
-onClickScreen = () => {
+import React, {Component} from 'react';
+
+
+class ResponseGame extends Component {
+    state = {
+        state: 'waiting',
+        message: 'Click to start the game',
+        result: [],
+    }
+timeout;
+startTime;
+endTime;
+     onClickScreen = () => {
      const {state, message, result} = this.state;
      if (state === 'waiting') {
          this.setState({
@@ -36,7 +48,46 @@ onClickScreen = () => {
          this.setState((prevState) => {
           return{ state:'waiting',
              message: ' Click to Start',
-             result: [...prevState.result, this.endTime-this.startTime]}```
+             result: [...prevState.result, this.endTime-this.startTime]
+        
+            } 
+   })    
+   console.log(result)
+       
+         }
+     }
+     onReset = () => {
+        this.setState({
+          result: [],
+        });
+      };
+     renderAverage = () => {
+        
+        const {result} = this.state; 
+        return result.length === 0 ? null : <> <div>Average Response Time: {this.state.result.reduce((a, c) => a + c)/
+        result.length*0.01} sec </div>
+        <button onClick={this.onReset}>Reset</button></>}
+       
+
+    render () 
+    {
+    const {state, message} = this.state;  
+   return (
+    <>
+    <div id="screen" className={state} 
+    onClick={this.onClickScreen}>
+        {message}
+    </div>
+    <div id='note'>
+    {this.renderAverage()}
+    </div>
+     </>
+
+        )
+    }
+}
+export default ResponseGame;
+             ```
 
 
 ## Image
