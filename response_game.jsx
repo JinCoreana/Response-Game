@@ -56,7 +56,7 @@ endTime;
         
         const {result} = this.state; 
         return result.length === 0 ? null : <> <div>Average Response Time: {this.state.result.reduce((a, c) => a + c)/
-        result.length*0.01} sec </div>
+        result.length*0.001} sec </div>
         <button onClick={this.onReset}>Reset</button></>}
        
 
